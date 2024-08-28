@@ -1,1 +1,1 @@
-Hello World
+docker compose pull careportal && docker compose rm -s -f careportal && docker compose up -d careportal
