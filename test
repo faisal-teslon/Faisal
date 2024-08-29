@@ -1,1 +1,5 @@
 docker compose pull careportal && docker compose rm -s -f careportal && docker compose up -d careportal
+
+
+read -p "Enter the service name: " SERVICE
+docker compose pull "$SERVICE" && docker compose rm -s -f "$SERVICE" && docker compose up -d "$SERVICE"
