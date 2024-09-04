@@ -1,4 +1,5 @@
 docker compose pull careportal && docker compose rm -s -f careportal && docker compose up -d careportal
+hostnamectl ####Static hostname: Icon name: Chassis: Machine ID: Boot ID: Virtualization: Operating System: Kernel: Architecture: Hardware Vendor: Hardware Model: 
 
 
 read -p "Enter the service name: " SERVICE
