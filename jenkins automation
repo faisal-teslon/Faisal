@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Execute Remote Commands') {
+            steps {
+                script {
+                    def remoteHost = '$DOMAIN_NAME'
+                    def user = '$USER_NAME' 
+                    def commands = '''
+                       # echo "Hello From Jenkins Server"
+                        #cd carenation-deploy/
+                        docker ps
+                        docker compose pull "$SERVICE_NAME" && docker compose rm -s -f "$SERVICE_NAME" && docker compose up -d "$SERVICE_NAME" && docker ps && docker compose ps
+                        #docker compose logs $SERVICE_NAME
+                       # docker compose ps
+                        #docker system prune -f
+                    '''
+                    sh """
+                        ssh -o StrictHostKeyChecking=no -i /var/jenkins_home/.ssh/id_rsa ${user}@${remoteHost} "${commands}"
+                    """
+                }
+            }
+        }
+    }
+}
