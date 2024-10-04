@@ -24,3 +24,48 @@ pipeline {
         }
     }
 }
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+pipeline {
+    agent any
+
+    parameters {
+        string(name: 'NEW_TAG_CAREPORTAL', defaultValue: '', description: 'Enter new tag for the careportal service (e.g., my-tag)')
+        string(name: 'SERVICE_NAME', defaultValue: 'careportal', description: 'Enter Service Name (e.g., careportal,)')
+        string(name: 'DOMAIN_NAME', defaultValue: 'testing.carenation.in', description: 'Enter the domain name of the remote host')
+        string(name: 'USER_NAME', defaultValue: 'root', description: 'Enter the username for SSH login')
+        string(name: 'DOCKER_COMPOSE_FILE_PATH', defaultValue: '/root/carenation-deploy', description: 'Directory Path to your Docker Compose file')
+    }
+
+    stages {
+        stage('Execute Remote Commands') {
+            steps {
+                script {
+                    // Retrieve parameters for clarity
+                    def remoteHost = params.DOMAIN_NAME
+                    def user = params.USER_NAME 
+                    def dockerComposePath = params.DOCKER_COMPOSE_FILE_PATH
+                    
+                    // Commands to execute on the remote host
+                    def commands = """
+                        echo "Hello From Jenkins Server"
+                        cd "${dockerComposePath}"
+                        docker ps
+                        docker compose ps
+                        cp docker-compose.yml docker-compose.yml.bak
+                        sed -i 's|teslontechnologies/carenation-careportal:[^ ]*|teslontechnologies/carenation-careportal:${NEW_TAG_CAREPORTAL}|' docker-compose.yml
+                        diff docker-compose.yml.bak docker-compose.yml
+                        docker compose pull "$SERVICE_NAME" && docker compose rm -s -f "$SERVICE_NAME" && docker compose up -d "$SERVICE_NAME" && docker ps && docker compose ps
+                        
+                    
+                    """
+
+                    // Execute the commands on the remote host
+                    sh """
+                        ssh -o StrictHostKeyChecking=no -i /var/jenkins_home/.ssh/id_rsa ${user}@${remoteHost} "${commands}"
+                    """
+                }
+            }
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
