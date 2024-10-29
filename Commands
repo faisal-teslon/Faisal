@@ -12,3 +12,8 @@ docker-compose pull "$SERVICE" && docker-compose rm -s -f "$SERVICE" && docker-c
 
 -----------------------------
 scp -r /root/carenation-deploy root@carebrain.carenation.in:/root
+
+------------------------------------------------------------
+           http server
+python3 -m http.server 8000
+http://localhost:8000
