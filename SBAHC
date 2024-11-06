@@ -1,1 +1,4 @@
 yarn build-ipa --type carenation-patient-app --connected-devices no --location-tracking no --payment-gateway no --base-url "sbahc.carenation.io" --package "in.carenation.health.sbahc" --name "Carenation Health" --short-name "Carenation" --branding-profile "carenation" --ios-version "6.10.0" --default-locale "en-US" --white-labelled no
+-------------------------------------------–––––––––––––----------------------------
+yarn build-ipa --type carenation-patient-app --connected-devices no --location-tracking no --payment-gateway no --base-url "sbahc.carenation.io" --package "sa.org.sbahc.carenation.health" --name "SBAHC Health" --short-name "SBAHC" --branding-profile "sbahc" --ios-version "1.0.1" --default-locale "en-US" --white-labelled no
+-------------------------------------------------------------------------------------
