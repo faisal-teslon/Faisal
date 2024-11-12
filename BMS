@@ -1,0 +1,5 @@
+git status
+git pull
+docker buildx build --platform linux/amd64 -t bmsdashboard:1.0.1 .
+docker tag bmsdashboard:1.0.1 teslontechnologies/bmsdashboard:1.0.1
+docker push teslontechnologies/bmsdashboard:1.0.1
