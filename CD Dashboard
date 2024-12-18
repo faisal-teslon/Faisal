@@ -1,0 +1,2 @@
+yarn build-webapp --base-url "staging.carenation.in" --default-locale "en-US" --white-labelled no
+docker buildx build --platform linux/amd64 -t teslontechnologies/carescribe-dashboard:latest  --push .
