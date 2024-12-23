@@ -1,0 +1,5 @@
+DOMAIN=footcure.in
+WILDCARD=*.$DOMAIN
+echo $DOMAIN && echo $WILDCARD
+sudo certbot -d $DOMAIN -d $WILDCARD --manual --preferred-challenges dns certonly
+nginx -s reload
