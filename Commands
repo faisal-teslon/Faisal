@@ -21,6 +21,7 @@ http://localhost:8000
 yarn build-apks --type carenation-patient-app --connected-devices no --location-tracking no --payment-gateway yes --base-url "sbahc.carenation.io" --package "in.carenation.health.patient" --name "SBAHC Health" --short-name "SBAHC" --branding-profile "sbahc" --default-locale "en-US" --white-labelled no
 yarn build-ipa --type carenation-patient-app --connected-devices no --location-tracking no --payment-gateway no --base-url "sbahc.carenation.io" --package "in.carenation.health.sbahc" --name "SBAHC Health" --short-name "SBAHC" --branding-profile "sbahc" --ios-version "6.10.0" --default-locale "en-US" --white-labelled no
 
+"build:docker": "docker buildx build --platform linux/arm64 -t teslontechnologies/carenation-careportal:home-healthcare-159 --push .",
 
 
 ## To prune all unused Docker resources (containers, volumes, networks, and images), run the following command:
