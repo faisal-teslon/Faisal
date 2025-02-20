@@ -1,0 +1,86 @@
+dckr_pat_DKRRORV3gy--blJgMya8VqV-Q_8fake
+https://github.com/FiloSottile/mkcert
+teslontechnologies / dckr_pat_9MMyTz0-5q9zGpL4U4ZvlHSFixY
+https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-using-lets-encrypt-certificates-with-wordpress.html
+https://developers.google.com/speed/public-dns/cache
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEcwpZlgIoeSFev9FuoPZI+jPcqBRBdkjy4xpYfDwTvU faisal@teslon.io
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEcwpZlgIoeSFev9FuoPZI+jPcqBRBdkjy4xpYfDwTvU faisal@teslon.io
+https://docs.google.com/spreadsheets/d/1RIrb1G1ZSh7cN6PHRlLGwSJd_WcLndci_MIx7mO2aXk/edit?gid=0#gid=0
+https://accounts.google.com/v3/signin/confirmidentifier?authuser=0&continue=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdevconsole%2F&hl=en&ifkv=ASSHykqYuYEZZTC1sjv7g9bEc6AbkVwScgAoVo9Noekh0qfx0LO7CJ0tn0rcVdIO41SsO6hIezK0&passive=180&service=chromewebstore&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-654292185%3A1739860860173124&ddm=1
+----------------------------------------------------
+ICE_SERVERS=[{ "urls": ["stun:52.66.255.1:80"] }, { "urls": ["turn:52.66.255.1:80"], "username": "carenation", "credential": "Carenation123Vmaatu" }]
+ICE_SERVERS_PRIVATE_IPS={"52.66.255.1": "172.31.8.182"}
+
+private ips of relay u hav to give in additional env var ICE_SERVERS_PRIVATE_IPS
+
+LHS is ppublic IP and RHS is private IP
+
+in relay config there are 3 IPs 
+
+listening-ip=159.69.93.227
+relay-ip=159.69.93.227
+external-ip=159.69.93.227
+
+we hav to explore which ones we should use private and public IPs
+
+Also KMS in docker lets run with host networking
+
+u know how to configure that rite
+
+network_mode: host
+
+refer to remotecontrol.carenation.in docker-compose file
+------------------------------------------------------------------------------
+https://medium.com/@hiteshgondalia/oci-compute-boot-volume-best-practices-3b2c4b00f1bf
+https://docs.mattermost.com/install/install-docker.html#deploy-mattermost-on-docker-for-production-use
+https://docs.mattermost.com/configure/custom-branding-tools.html
+https://docs.google.com/spreadsheets/d/1WgF6KFMb6eMq1z-NVyVYjjNCrdw52mlcoCB02g5qJz0/edit?usp=sharing
+https://docs.google.com/document/d/1zGWch4PS2-sT8mzcgcuGToKMLkiuGPkjg8xue-_HsoU/edit?tab=t.0
+--------------------------------------------------------------------------------------------------------------
+openssl pkcs12 -in wildcard_seha_ae_2025.pfx -nocerts -out seha.key -nodes -legacy
+
+openssl pkcs12 -in wildcard_seha_ae_2025.pfx -clcerts -nokeys -out seha.crt -nodes -legacy
+-----–––––––––––-------------–––––--------–––-------––-----–-------------–------–--------––----–-----––----–---––-
+medicalnlpservice:
+    image: teslontechnologies/carenation-medical-nlp-service:latest
+    container_name: medicalnlpservice
+    networks: [ 'carenation-network' ]
+    volumes:
+      - ./nlpservice/ctakes-resources-4.0-bin:/home/carenation-medical-nlp-service/ctakes-resources-4.0-bin
+    ports:
+      - "7667:7667"
+    environment:
+      UMLS_USERNAME: 'dileepteslon1'
+      UMLS_PASSWORD: '9b94261c-2f06-4b87-ac10-4270069e3309'
+      API_AUTH_USERNAME: 'carenation'
+      API_AUTH_PASSWORD: 'C@ren@t!0n@123'
+    restart: unless-stopped
+
+
+#!/bin/bash
+
+mkdir ctakes-resources-4.0-bin
+cd ctakes-resources-4.0-bin
+wget http://sourceforge.net/projects/ctakesresources/files/ctakes-resources-4.0-bin.zip
+unzip ctakes-resources-4.0-bin.zip
+sed -i 's+jdbc:hsqldb:file:resources/org/apache/ctakes/dictionary/lookup/fast/sno_rx_16ab/sno_rx_16ab+jdbc:hsqldb:file:org/apache/ctakes/dictionary/lookup/fast/sno_rx_16ab/sno_rx_16ab+g' resources/org/apache/ctakes/dictionary/lookup/fast/sno_rx_16ab.xml
+rm LICENSE
+rm README
+rm ctakes-resources-4.0-bin.zip
+
+
+Download ctakes-resources-4.0-bin.zip (ctakesresources)
+http://sourceforge.net
+#!/bin/bash
+
+mkdir ctakes-resources-4.0-bin
+cd ctakes-resources-4.0-bin
+wget  http://sourceforge.net/projects/ctakesresources/files/ctakes-resources-4.0-bin.zip 
+unzip ctakes-resources-4.0-bin.zip
+sed -i 's+jdbc:hsqldb:file:resources/org/apache/ctakes/dictionary/lookup/fast/sno_rx_16ab/sno_rx_16ab+jdbc:hsqldb:file:org/apache/ctakes/dictionary/lookup/fast/sno_rx_16ab/sno_rx_16ab+g' resources/org/apache/ctakes/dictionary/lookup/fast/sno_rx_16ab.xml
+rm LICENSE
+rm README
+rm ctakes-resources-4.0-bin.zip
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
