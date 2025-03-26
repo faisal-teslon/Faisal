@@ -6,7 +6,7 @@ hostnamectl ####Static hostname: Icon name: Chassis: Machine ID: Boot ID: Virtua
 read -p "Enter the service name: " SERVICE
 docker compose pull "$SERVICE" && docker compose rm -s -f "$SERVICE" && docker compose up -d "$SERVICE" && docker ps && docker compose ps
 
------------------------------old OS Version------------------------------------------------------------------------
+-----------------------------Old OS Version------------------------------------------------------------------------
 read -p "Enter the service name: " SERVICE
 docker-compose pull "$SERVICE" && docker-compose rm -s -f "$SERVICE" && docker-compose up -d "$SERVICE" && docker ps && docker-compose ps
 
