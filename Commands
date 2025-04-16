@@ -1,5 +1,9 @@
 docker compose pull careportal && docker compose rm -s -f careportal && docker compose up -d careportal
 docker-compose pull careportal && docker-compose rm -s -f careportal && docker-compose up -d careportal
+
+docker compose pull telemedapp && docker compose rm -s -f telemedapp && docker compose up -d telemedapp
+
+
 hostnamectl ####Static hostname: Icon name: Chassis: Machine ID: Boot ID: Virtualization: Operating System: Kernel: Architecture: Hardware Vendor: Hardware Model: 
 
 -----------------------------New OS Version------------------------------------------------------------------------
