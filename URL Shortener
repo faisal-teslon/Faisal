@@ -1,10 +1,2 @@
-curl -X POST https://url.teslon.io/rest/v3/short-urls \
-  -H "X-Api-Key: 15553376-23c4-491a-993f-19c755dc17d1" \
-  -H "Content-Type: application/json" \
-  -d '{"longUrl": "https://drive.google.com/drive/folders/180ga5Q9DVyP43djHrclqMCbSoeEbYNiV"}'
-
-
-
-
 
 Hosted at Oracle Cloud
