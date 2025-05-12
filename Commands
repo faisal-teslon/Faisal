@@ -34,6 +34,9 @@ yarn build-ipa --type carenation-patient-app --connected-devices no --location-t
 ## To prune all unused Docker resources (containers, volumes, networks, and images), run the following command:
            docker system prune -a --volumes
 
+-------------––––––––––––-----––––----––-----––---––--––--–--––--–--––-–---––--––-–––––––––––––––––––––––––––––––––––––––––––––––––––––----
+docker buildx build --platform linux/amd64,linux/arm64 -t teslontechnologies/carenation-careportal:rehabilitation-8.12.136 --push .
+------------------------------------------––––––––––---------------------------------------------------------------------------------------
 
 
 docker buildx build --platform linux/arm64 -t teslontechnologies/carenation-careportal:rehabilitation-8.12.80 --push .
