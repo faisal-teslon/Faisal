@@ -1,6 +1,9 @@
 docker compose pull careportal && docker compose rm -s -f careportal && docker compose up -d careportal
 docker-compose pull careportal && docker-compose rm -s -f careportal && docker-compose up -d careportal
 
+docker compose pull simplemeetingsvmaatu && docker compose rm -s -f simplemeetingsvmaatu && docker compose up -d simplemeetingsvmaatu
+
+
 docker compose pull telemedapp && docker compose rm -s -f telemedapp && docker compose up -d telemedapp
 
 
