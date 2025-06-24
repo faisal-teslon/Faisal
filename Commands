@@ -6,6 +6,12 @@ docker compose pull simplemeetingsvmaatu && docker compose rm -s -f simplemeetin
 
 docker compose pull telemedapp && docker compose rm -s -f telemedapp && docker compose up -d telemedapp
 
+SERVICE=careportal && docker compose pull $SERVICE && docker compose rm -s -f $SERVICE && docker compose up -d $SERVICE
+SERVICE=careportal && docker compose pull $SERVICE && docker compose rm -s -f $SERVICE && docker compose up -d $SERVICE
+SERVICE=careportal && docker compose pull $SERVICE && docker compose rm -s -f $SERVICE && docker compose up -d $SERVICE
+SERVICE=careportal && docker compose pull $SERVICE && docker compose rm -s -f $SERVICE && docker compose up -d $SERVICE
+SERVICE=careportal && docker compose pull $SERVICE && docker compose rm -s -f $SERVICE && docker compose up -d $SERVICE
+SERVICE=careportal && docker compose pull $SERVICE && docker compose rm -s -f $SERVICE && docker compose up -d $SERVICE
 
 hostnamectl ####Static hostname: Icon name: Chassis: Machine ID: Boot ID: Virtualization: Operating System: Kernel: Architecture: Hardware Vendor: Hardware Model: 
 
