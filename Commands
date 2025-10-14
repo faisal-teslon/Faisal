@@ -3,6 +3,7 @@ docker-compose pull careportal && docker-compose rm -s -f careportal && docker-c
 
 docker compose pull simplemeetingsvmaatu && docker compose rm -s -f simplemeetingsvmaatu && docker compose up -d simplemeetingsvmaatu
 
+docker buildx build --platform linux/amd64,linux/arm64 -t teslontechnologies/carenation-patient-app:kims-counter-book-flow-7.13.74 --push .
 
 docker compose pull telemedapp && docker compose rm -s -f telemedapp && docker compose up -d telemedapp
 
