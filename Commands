@@ -28,6 +28,14 @@ docker-compose pull "$SERVICE" && docker-compose rm -s -f "$SERVICE" && docker-c
 scp -r /root/carenation-deploy root@carebrain.carenation.in:/root
 
 ------------------------------------------------------------
+
+=================================================================
+
+docker buildx build --build-arg GITHUB_TOKEN=$GITHUB_TOKEN --platform linux/amd64,linux/arm64 -t teslontechnologies/carenation-careportal:notes-template-8.13.687 --push .
+
+====================≠≠=======≠≠====≠≠======≠===≠≠==≠=≠≠=====≠==≠=
+
+
            http server
 python3 -m http.server 8000
 http://localhost:8000
