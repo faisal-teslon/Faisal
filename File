@@ -1,0 +1,60 @@
+ 997  lsblk
+  998  df -h
+  999  ls -h /mnt/data/
+ 1000  la -lah /mnt/data/
+ 1001  cd /mnt/data/
+ 1002  ls
+ 1003  du -sh
+ 1004  docker image ls
+ 1005  cd /root
+ 1006  ls
+ 1007  cd carenation-deploy/
+ 1008  ls
+ 1009  du -sh
+ 1010  find / -type f -exec du -h {} + | sort -rh | head -n 20
+ 1011  cd /cw
+ 1012  ls
+ 1013  rm -rf backup-cureworks-data-20240521.tar.gz 
+ 1014  cd ..
+ 1015  ls
+ 1016  rm -rf cw/
+ 1017  cd /home/root
+ 1018  cd /root
+ 1019  cd carenation-deploy/
+ 1020  ls
+ 1021  docker ps
+ 1022  docker compose rm -s -f
+ 1023  find / -type f -exec du -h {} + | sort -rh | head -n 20
+ 1024  df -h
+ 1025  docker compose up -d mongo minio redis rabbitmq
+ 1026  docker compose up -d ohif orthanc careportal telemedapp kioskapp
+ 1027  docker compose up -d simplemeetingsserver 
+ 1028  clear
+ 1029  docker compose up -d simplemeetingsvmaatu kioskadminservice kioskmanagementapp
+ 1030  docker ps
+ 1031  docker compose logs -f careportal
+ 1032  docker compose up -d rabbitmq
+ 1033  docker compose logs -f rabbitmq
+ 1034  docker compose rm -s -f rabbitmq
+ 1035  docker compose rm -s -f careportal
+ 1036  docker compose up -d rabbitmq
+ 1037  docker compose logs -f rabbitmq
+ 1038  docker ps
+ 1039  docker compose rm -s -f careportal
+ 1040  docker compose rm -s -f rabbitmq
+ 1041  docker compose up -d rabbitmq
+ 1042  docker compose logs -f rabbitmq
+ 1043  docker compose up -dcareportal
+ 1044  docker compose up -d careportal
+ 1045  docker compose logs -f careportal --tail -100
+ 1046  docker compose logs -f rabbitmq
+ 1047* ls /mnt/data/rabbitmq/mnesia/rabbit@carenation-rabbitmq/msg_stores/vhosts
+ 1048  docker compose rm -s -f careportal
+ 1049  docker compoe rm -s -f rabbitmq
+ 1050  docker compose rm -s -f rabbitmq
+ 1051  rm -rf /mnt/data/rabbitmq
+ 1052  docker compose up -d rabbitmq
+ 1053  docker compose up -d careportal
+ 1054  docker compose ps
+ 1055  cat docker-compose.yml
+ 1056  htop
